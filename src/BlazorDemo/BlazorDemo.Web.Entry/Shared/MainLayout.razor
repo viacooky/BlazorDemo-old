@@ -1,0 +1,38 @@
+﻿@inherits MainLayoutComponent
+@inject ISystemService SystemService
+@* <RadzenDialog/> *@
+@* <RadzenNotification/> *@
+@* <RadzenTooltip/> *@
+@* <RadzenContextMenu/> *@
+
+<RadzenLayout >
+    <RadzenHeader>
+        <ChildContent>
+            <div class="d-flex align-items-center">
+                <RadzenSidebarToggle Click="@SidebarToggleClick"/>
+                <RadzenImage Path="images/logo.png" style="width: 24px; height: 24px;"></RadzenImage>
+                <RadzenText Text="@SystemService.AppName()" TextStyle="TextStyle.Subtitle1"/>
+            </div>
+        </ChildContent>
+    </RadzenHeader>
+    <RadzenBody Expanded="@sidebarExpanded">
+        @Body
+    </RadzenBody>
+    <RadzenSidebar Expanded="@sidebarExpanded" >
+        <RadzenPanelMenu>
+            <RadzenPanelMenuItem Text="Home" Icon="dashboard" Path="/" />
+            <RadzenPanelMenuItem Text="开发工具" Icon="dashboard">
+                <RadzenPanelMenuItem Text="啊啊啊" Icon="donut_large" Path="11" />
+                <RadzenPanelMenuItem Text="222" Icon="donut_large" Path="22" />
+                <RadzenPanelMenuItem Text="333" Icon="donut_large" Path="33" />
+                <RadzenPanelMenuItem Text="444" Icon="donut_large" Path="44" />
+            </RadzenPanelMenuItem>
+            <RadzenPanelMenuItem Text="测试页面1" Icon="dns" Path="counter" />
+            <RadzenPanelMenuItem Text="测试页面2" Icon="donut_large" Path="fetchdata" />
+        </RadzenPanelMenu>
+        <RadzenStack AlignItems="AlignItems.Center">
+            <RadzenText Text="@SystemService.AppVersion()" TextStyle="TextStyle.Caption" TextAlign="TextAlign.Center"/>
+            <RadzenText Text="@SystemService.CopyRight()" TextStyle="TextStyle.Caption" TextAlign="TextAlign.Center"/>
+        </RadzenStack>
+    </RadzenSidebar>
+</RadzenLayout>

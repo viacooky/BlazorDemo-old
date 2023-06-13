@@ -1,0 +1,11 @@
+@using BlazorDemo.WPF.Shared
+<Router AppAssembly="@typeof(BlazorDemo.WPF.WebApp).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(BlazorDemo.WPF.Shared.MainLayout)" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(BlazorDemo.WPF.Shared.MainLayout)">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>

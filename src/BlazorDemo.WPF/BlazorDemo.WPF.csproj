@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<RootNamespace>BlazorDemo.WPF</RootNamespace>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
+		<PublishReadyToRunComposite>true</PublishReadyToRunComposite>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.86" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1823.32" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BlazorDemo\BlazorDemo.Web.Core\BlazorDemo.Web.Core.csproj" />
+	</ItemGroup>
+</Project>
